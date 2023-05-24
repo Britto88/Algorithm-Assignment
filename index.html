@@ -1,0 +1,60 @@
+<!-- Question 1 -->
+
+<!-- function sum_of_distinct_elements(set1, set2): -->
+
+    distinct_elements = []
+    sum_distinct_elements = 0
+    seen_elements = []
+
+    <!-- for element in set1: -->
+
+        if element not in seen_elements:
+            seen_elements.append(element)
+            distinct_elements.append(element)
+            sum_distinct_elements += element
+
+    <!-- for element in set2: -->
+
+        if element not in seen_elements:
+            seen_elements.append(element)
+            distinct_elements.append(element)
+            sum_distinct_elements += element
+
+    return sum_distinct_elements
+
+
+    
+    <!-- Question 2 -->
+    
+    function dotProduct(v1, v2) {
+        let ps = 0;
+        for (let i = 0; i < v1.length; i++) {
+          ps += v1[i] * v2[i];
+        }
+        return ps;
+      }
+      
+      function areVectorsOrthogonal(v1, v2) {
+        const ps = dotProduct(v1, v2);
+        if (ps === 0) {
+          console.log("Vectors are orthogonal.");
+        } else {
+          console.log("Vectors are not orthogonal.");
+        }
+      }
+      
+      const n = parseInt(prompt("Enter the number of pairs of vectors:"));
+      
+      for (let i = 0; i < n; i++) {
+        const v1 = prompt("Enter vector 1 (space-separated values):")
+          .trim()
+          .split(" ")
+          .map(Number);
+        const v2 = prompt("Enter vector 2 (space-separated values):")
+          .trim()
+          .split(" ")
+          .map(Number);
+      
+        areVectorsOrthogonal(v1, v2);
+      }
+      
